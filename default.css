@@ -1,0 +1,121 @@
+header, footer {
+	background-color: LightSlateGray;
+	text-align: center;
+	color: white;
+}
+
+header {
+	border-bottom: solid DimGray 1px;
+	position: relative;
+	font-size: 0; /*Remove white spaces*/
+}
+
+header ul {
+	margin: 0;
+	padding: 0;
+}
+
+header li {
+	list-style: none;
+	display: inline-block;
+	font-size: initial;
+}
+
+header a {
+	color: inherit;
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 15px;
+	position: relative;
+}
+
+header a:hover {
+	background-color: DimGray;
+}
+
+header a:hover::after {
+	content: ">";
+	position: absolute;
+	right: 2px;
+}
+
+header a:hover::before {
+	content: "<";
+	position: absolute;
+	left: 2px;
+}
+
+header label {
+	display: none;
+}
+
+#menu-button {
+	display: none;
+}
+
+@media only screen and (max-width: 400px) {
+	
+	header {
+		text-align: left;
+	}
+
+	header li {
+		display: block;
+	}
+
+	header a {
+		display: block;
+		text-align: center;
+	}
+
+	header label {
+		display: inline-block;
+		padding: 10px;
+	}
+
+	header label:hover, header #menu-button:checked ~ label:hover {
+		background-color: DimGray;
+	}
+
+	header #menu-button:checked ~ label {
+		background-color: #607080;
+	}
+
+	header ul {
+		background-color: #607080;
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	header #menu-button:not(:checked) ~ ul {
+		display: none;
+	}
+}
+
+
+main {
+	flex: 1 0 auto;
+	margin: 10px 0;
+	padding: 10px;
+	background-color: LightGray;
+}
+
+
+footer {
+	right: 0;
+	left: 0;
+	border-top: solid DimGray 1px;
+	padding: 10px;
+}
+
+body {
+	margin: 0;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+html {
+	height: 100%;
+}
