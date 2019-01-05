@@ -1,27 +1,48 @@
+/* ALL CONTENT */
+body {
+	margin: 0;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+html {
+	height: 100%;
+	font-family: Arial, sans-serif;
+}
+
 header, footer {
 	background-color: LightSlateGray;
 	text-align: center;
 	color: white;
 }
 
+/* HEADER and FOOTER */
 header {
-	border-bottom: solid DimGray 1px;
+	border-bottom: 1px solid DimGray;
+}
+
+footer {
+	border-top: 1px solid DimGray;
+}
+
+.menu {
 	position: relative;
 	font-size: 0; /*Remove white spaces*/
 }
 
-header ul {
+.menu ul {
 	margin: 0;
 	padding: 0;
 }
 
-header li {
+.menu li {
 	list-style: none;
 	display: inline-block;
 	font-size: initial;
 }
 
-header a {
+.menu a {
 	color: inherit;
 	display: inline-block;
 	text-decoration: none;
@@ -29,17 +50,17 @@ header a {
 	position: relative;
 }
 
-header a:hover {
+.menu a:hover {
 	background-color: DimGray;
 }
 
-header a:hover::after {
+.menu a:hover::after {
 	content: ">";
 	position: absolute;
 	right: 2px;
 }
 
-header a:hover::before {
+.menu a:hover::before {
 	content: "<";
 	position: absolute;
 	left: 2px;
@@ -53,17 +74,17 @@ header label {
 	display: none;
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 420px) {
 	
 	header {
 		text-align: left;
 	}
 
-	header li {
+	header.menu li {
 		display: block;
 	}
 
-	header a {
+	header.menu a {
 		display: block;
 		text-align: center;
 	}
@@ -71,6 +92,7 @@ header label {
 	header label {
 		display: inline-block;
 		padding: 10px;
+		font-size: initial;
 	}
 
 	header label:hover, header #menu-button:checked ~ label:hover {
@@ -93,29 +115,60 @@ header label {
 	}
 }
 
-
+/* MAIN CONTENT */
 main {
 	flex: 1 0 auto;
 	margin: 10px 0;
-	padding: 10px;
+	padding: 0;
 	background-color: LightGray;
 }
 
-
-footer {
-	right: 0;
-	left: 0;
-	border-top: solid DimGray 1px;
-	padding: 10px;
+h1 {
+	margin: 5px auto;
 }
 
-body {
-	margin: 0;
-	min-height: 100%;
+section {
 	display: flex;
-	flex-direction: column;
+
+	border-style: solid;
+	border-color: darkgray;
+	border-width: 0;
+	border-top-width: 5px;
+	border-bottom-width: 5px;
+
+	min-height: 250px;
+	max-height: 600px;
+	height: 100vh;
 }
 
-html {
-	height: 100%;
+section + section {
+	border-top-width: 0;
+}
+
+#portrait {
+	height: 250px;
+	width: 250px;
+	border: 2px solid black;
+	border-radius: 50%;
+	background-color: lightblue;
+	margin: auto;
+	margin-top: 25px;
+
+	transition: all 1s;
+}
+
+#presentation {
+	background-image: url("mandelbrot-1600.png");
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center;
+}
+
+@media only screen and ((max-width: 420px) or (max-height: 300px)) {
+	
+	#portrait {
+		height: 150px;
+		width: 150px;
+		margin: 5px auto;
+	}
 }

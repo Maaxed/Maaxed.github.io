@@ -6,23 +6,39 @@
 	<link rel="stylesheet" type="text/css" href="default.css">
 </head>
 <body>
-	<header>
+	<header class="menu">
 		<input type = "checkbox" value="menu-button" id="menu-button">
 		<label for="menu-button">Menu</label>
 		<ul>
-			<li><a href="index.html">Accueil</a></li>
-			<li><a href="index.html">Formation</a></li>
-			<li><a href="index.html">Compétences</a></li>
-			<li><a href="index.html">Projets</a></li>
+			<li><a href="#">Accueil</a></li>
+			<li><a href="#education">Formation</a></li>
+			<li><a href="#skills">Compétences</a></li>
+			<li><a href="#">Projets</a></li>
 		</ul>
 	</header>
 	
 	<main>
-		Content
+		<!--Exemple de créations + photo-->
+		<section id="presentation">
+			<div id="portrait"></div>
+		</section>
+
+		<!--Formation-->
+		<section>
+			<h1><a id="education">Ma Formation</a></h1>
+		</section>
+
+		<!--Compétences-->
+		<section>
+			<h1><a id="skills">Mes Compétences :</a></h1>
+		</section>
 	</main>
 
-	<footer>
-		Contact / Mentions Légales
+	<footer class="menu">
+		<ul>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Mentions Légales</a></li>
+		</ul>
 	</footer>
 </body>
 </html>
