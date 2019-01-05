@@ -9,26 +9,28 @@ body {
 html {
 	height: 100%;
 	font-family: Arial, sans-serif;
+	scroll-behavior: smooth;
 }
 
 header, footer {
-	background-color: LightSlateGray;
 	text-align: center;
 	color: white;
 }
 
 /* HEADER and FOOTER */
 header {
-	border-bottom: 1px solid DimGray;
+	position: fixed;
+	left: 0;
+	right: 0;
+	background-color: #203040;
 }
 
 footer {
-	border-top: 1px solid DimGray;
+	background-color: #102030;
 }
 
 .menu {
-	position: relative;
-	font-size: 0; /*Remove white spaces*/
+	font-size: 0;
 }
 
 .menu ul {
@@ -51,7 +53,7 @@ footer {
 }
 
 .menu a:hover {
-	background-color: DimGray;
+	background-color: #304050;
 }
 
 .menu a:hover::after {
@@ -74,6 +76,7 @@ header label {
 	display: none;
 }
 
+/* Custom menu for small screens */
 @media only screen and (max-width: 420px) {
 	
 	header {
@@ -96,15 +99,15 @@ header label {
 	}
 
 	header label:hover, header #menu-button:checked ~ label:hover {
-		background-color: DimGray;
+		background-color: #273747;
 	}
 
 	header #menu-button:checked ~ label {
-		background-color: #607080;
+		background-color: #001020;
 	}
 
 	header ul {
-		background-color: #607080;
+		background-color: #001020;
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -118,31 +121,23 @@ header label {
 /* MAIN CONTENT */
 main {
 	flex: 1 0 auto;
-	margin: 10px 0;
 	padding: 0;
-	background-color: LightGray;
 }
 
 h1 {
 	margin: 5px auto;
 }
 
+h1 a {
+	padding-top: calc(19px + 1em);
+}
+
 section {
 	display: flex;
 
-	border-style: solid;
-	border-color: darkgray;
-	border-width: 0;
-	border-top-width: 5px;
-	border-bottom-width: 5px;
-
 	min-height: 250px;
 	max-height: 600px;
-	height: 100vh;
-}
-
-section + section {
-	border-top-width: 0;
+	height: calc(100vh - (20px + 1em));
 }
 
 #portrait {
@@ -152,23 +147,38 @@ section + section {
 	border-radius: 50%;
 	background-color: lightblue;
 	margin: auto;
-	margin-top: 25px;
 
 	transition: all 1s;
 }
 
-#presentation {
-	background-image: url("mandelbrot-1600.png");
+#presentation-section {
+	background-image: url("mandelbrot-2000-color.png");
 	background-repeat: no-repeat;
-	background-size:cover;
 	background-position: center;
+	background-color: #5900ff;
+	background-size: 2000px;
+	margin-top: calc(20px + 1em);
+	max-height: none;
+	transition: all 1s;
 }
 
-@media only screen and ((max-width: 420px) or (max-height: 300px)) {
+#education-section {
+	background-color: orange;
+}
+
+#skills-section {
+	background-color: deepskyblue;
+}
+
+/* Smaller portrait for little screens */
+@media only screen and ((max-width: 450px) or (max-height: 350px)) {
 	
+	#presentation-section {
+		background-size: 1000px;
+	}
+
 	#portrait {
 		height: 150px;
 		width: 150px;
-		margin: 5px auto;
 	}
 }
