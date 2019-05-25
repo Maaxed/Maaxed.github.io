@@ -19,10 +19,12 @@ header, footer {
 
 /* HEADER and FOOTER */
 header {
-	position: fixed;
+	position: sticky;
+	top: 0;
 	left: 0;
 	right: 0;
 	background-color: #203040;
+	z-index: 10;
 }
 
 footer {
@@ -56,13 +58,13 @@ footer {
 	background-color: #304050;
 }
 
-.menu a:hover::after {
+.menu a:hover::after, .menu a:focus::after {
 	content: ">";
 	position: absolute;
 	right: 2px;
 }
 
-.menu a:hover::before {
+.menu a:hover::before, .menu a:focus::before {
 	content: "<";
 	position: absolute;
 	left: 2px;
@@ -138,6 +140,7 @@ section {
 	min-height: 250px;
 	max-height: 600px;
 	height: calc(100vh - (20px + 1em));
+	position: relative;
 }
 
 #portrait {
@@ -157,9 +160,8 @@ section {
 	background-position: center;
 	background-color: #5900ff;
 	background-size: 2000px;
-	margin-top: calc(20px + 1em);
 	max-height: none;
-	transition: all 1s;
+	transition: background-size 1s;
 }
 
 #education-section {
