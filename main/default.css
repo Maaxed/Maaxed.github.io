@@ -23,8 +23,12 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: #203040;
 	z-index: 1;
+}
+
+header div {
+	z-index: initial;
+	background-color: #203040;
 }
 
 footer {
@@ -36,7 +40,6 @@ footer {
 }
 
 .menu ul {
-	margin: 0;
 	padding: 0;
 }
 
@@ -52,6 +55,11 @@ footer {
 	text-decoration: none;
 	padding: 10px 15px;
 	position: relative;
+}
+
+.menu a:hover, .menu a:focus {
+	color: inherit;
+	background-color: inherit;
 }
 
 .menu a:hover {
@@ -94,18 +102,29 @@ header label {
 		text-align: center;
 	}
 
-	header label {
+	header #menu-text {
 		display: inline-block;
 		padding: 10px;
 		font-size: initial;
 	}
 
-	header label:hover, header #menu-button:checked ~ label:hover {
+	header #menu-text:hover, header #menu-button:checked ~ #menu-text:hover {
 		background-color: #273747;
 	}
 
-	header #menu-button:checked ~ label {
+	header #menu-button:checked ~ #menu-text {
 		background-color: #001020;
+	}
+
+	header #menu-button:checked ~ #menu-darkener {
+		position: fixed;
+		display: block;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index: -1;
 	}
 
 	header ul {
@@ -124,6 +143,10 @@ header label {
 main {
 	flex: 1 0 auto;
 	padding: 0;
+}
+
+h1, h2, h3, h4 {
+	text-transform: capitalize;
 }
 
 h1 {
@@ -151,18 +174,45 @@ h3::before {
 	left: -1em;
 }
 
+h4 {
+	margin: 15px 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0 0 0 20px;
+}
+
 p {
 	text-align: justify;
+	margin: 15px 0;
+}
+
+a {
+	color: rgba(104, 31, 216, 0.8);
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	color: black;
+	background-color: rgba(127, 31, 255, 0.5);
 }
 
 section {
 	display: flex;
 	flex-direction: column;
+	position: relative;
+	padding: 10px;
+}
+
+section.auto-height {
 	min-height: 250px;
 	max-height: 600px;
 	height: calc(100vh - (20px + 1em));
-	position: relative;
-	padding: 10px;
+}
+
+h4::before {
+	content: "// ";
 }
 
 .flex-wrap {
@@ -172,17 +222,19 @@ section {
 	align-items: stretch;
 }
 
-.flex-wrap * {
+.flex-wrap > * {
 	margin: 10px;
-	padding: 5px;
-	flex: 1 0 1px;
+	padding: 10px;
+	flex: 1 0 0;
 	min-width: 200px;
 	max-width: 500px;
-	background-color: rgba(100, 120, 150, 0.5);
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.flex-wrap * * {
-	background: transparent;
+.flex-wrap > img {
+	padding: 2px;
+	flex: 0 0 auto;
 }
 
 #portrait {
@@ -190,7 +242,9 @@ section {
 	width: 250px;
 	border: 2px solid black;
 	border-radius: 50%;
+	object-position: top;
 	background-color: lightblue;
+	object-fit: cover;
 	margin: auto;
 
 	transition: all 1s;
@@ -206,11 +260,11 @@ section {
 	transition: background-size 1s;
 }
 
-#first-language-section {
+#orange {
 	background-color: orange;
 }
 
-#skills-section {
+#blue {
 	background-color: deepskyblue;
 }
 
