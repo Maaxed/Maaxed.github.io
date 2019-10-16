@@ -203,12 +203,13 @@ section {
 	flex-direction: column;
 	position: relative;
 	padding: 10px;
+	overflow: hidden;
 }
 
 section.auto-height {
 	min-height: 250px;
 	max-height: 600px;
-	height: calc(100vh - (20px + 1em));
+	height: calc(100vh - (40px + 1rem)); /* padding * 2 + menu height */
 }
 
 h4::before {
@@ -253,18 +254,37 @@ h4::before {
 	background-color: lightblue;
 	object-fit: cover;
 	margin: auto;
+	z-index: 0;
 
 	transition: all 1s;
 }
 
 #presentation-section {
-	background-image: url("mandelbrot-2000-color.webp");
-	background-repeat: no-repeat;
-	background-position: center;
 	background-color: #5900ff;
-	background-size: 2000px;
 	max-height: none;
-	transition: background-size 1s;
+	position: relative;
+	z-index: -1;
+}
+
+#presentation-background {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+#presentation-background img {
+	display: block;
+	width: auto;
+	height: 2000px;
+	align-self: center;
+	transition: height 1s;
 }
 
 #orange {
@@ -283,8 +303,8 @@ h4::before {
 /* Smaller portrait for little screens */
 @media only screen and ((max-width: 450px) or (max-height: 350px)) {
 	
-	#presentation-section {
-		background-size: 1000px;
+	#presentation-background img {
+		height: 1000px;
 	}
 
 	#portrait {
