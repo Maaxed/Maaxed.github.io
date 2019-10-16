@@ -189,13 +189,13 @@ p {
 }
 
 a {
-	color: rgba(104, 31, 216, 0.8);
+	color: darkblue;
 	text-decoration: none;
 }
 
 a:hover, a:focus {
-	color: black;
-	background-color: rgba(127, 31, 255, 0.5);
+	color: inherit;
+	background-color: rgba(0, 0, 141, 0.6);
 }
 
 section {
@@ -258,7 +258,7 @@ h4::before {
 }
 
 #presentation-section {
-	background-image: url("mandelbrot-2000-color.png");
+	background-image: url("mandelbrot-2000-color.webp");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: #5900ff;
@@ -273,6 +273,11 @@ h4::before {
 
 #blue {
 	background-color: deepskyblue;
+}
+
+#dark-blue {
+	color: white;
+	background-color: midnightblue;
 }
 
 /* Smaller portrait for little screens */
