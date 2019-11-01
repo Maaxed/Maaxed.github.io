@@ -1,63 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Lucas Guédon - Portfolio</title>
-	<link rel="stylesheet" type="text/css" href="default.css">
-</head>
-<body>
-	<header class="menu">
-		<div>
-			<input type = "checkbox" value="menu-button" id="menu-button">
-			<label for="menu-button" id="menu-darkener"></label>
-			<label for="menu-button" id="menu-text">Menu</label>
-			<label for="menu-button">Menu</label>
-			<ul>
-				<li><a href="#">Accueil</a></li>
-				<li><a href="#ludum-dare-45">Ludum Dare 45</a></li>
-				<li><a href="#ludum-dare-44">Ludum Dare 44</a></li>
-				<li><a href="#project-cube">Project Cube</a></li>
-			</ul>
-		</div>
-	</header>
-	
-	<main>
-		<!--Exemple de créations + photo-->
-		<section id="presentation-section" class="auto-height">
-			<picture id="presentation-background">
-				<source srcset="mandelbrot-2000-color.webp" type="image/webp">
-				<source srcset="mandelbrot-2000-color.png" type="image/png">
-				<img src="mandelbrot-2000-color.png">
-			</picture>
-			<img id="portrait" src="portrait.jpg" alt="Portrait">
-		</section>
 
-		<!--Ludum Dare 44-->
-		<section id="dark-blue">
+<structure src="default_structure.html">
+	<!--Exemple de créations + photo-->
+	<section id="presentation-section" class="auto-height">
+		<picture id="presentation-background">
+			<source srcset="mandelbrot-2000-color.webp" type="image/webp">
+			<source srcset="mandelbrot-2000-color.png" type="image/png">
+			<img src="mandelbrot-2000-color.png">
+		</picture>
+		<img id="portrait" src="portrait.jpg" alt="Portrait">
+	</section>
+
+	<!--Ludum Dare 44-->
+	<section id="dark-blue">
 <include src="ludum_dare_45.html">
-		</section>
+	</section>
 
-		<!--Ludum Dare 44-->
-		<section id="orange">
+	<!--Ludum Dare 44-->
+	<section id="orange">
 <include src="ludum_dare_44.html">
-		</section>
+	</section>
 
 
-		<!--TODO : -->
-		<!--CodingUp-->
-		<!--Project Cube-->
-		<!--IA-->
-		<!--Random Things-->
-		<section id="blue">
+	<!--TODO : -->
+	<!--CodingUp-->
+	<!--Project Cube-->
+	<!--IA-->
+	<!--Random Things-->
+	<section id="blue">
 <include src="project_cube.html">
-		</section>
-	</main>
-
-	<footer class="menu">
-		<ul>
-			<li><a href="#">Contact</a></li>
-			<li><a href="#">Mentions Légales</a></li>
-		</ul>
-	</footer>
-</body>
-</html>
+	</section>
+</structure>
