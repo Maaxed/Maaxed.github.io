@@ -1,0 +1,5 @@
+{% assign event = site.data.events[page.event_id] %}
+
+<h1><a id="{{page.event_id}}" href="{% link {{ event.post }} %}">{{ page.title }}</a></h1>
+<h3>{{ event.start | date: "%B %Y" }}</h3>
+{{ content }}

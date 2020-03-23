@@ -1,0 +1,9 @@
+---
+layout: page
+---
+
+{% assign event = site.data.events[page.event_id] %}
+
+<h3>{{ event.start | date: "%B %Y" }}</h3>
+
+{{ content }}
