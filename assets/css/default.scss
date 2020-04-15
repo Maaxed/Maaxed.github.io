@@ -28,6 +28,7 @@ header {
 	left: 0;
 	right: 0;
 	z-index: 1;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 	div {
 		z-index: initial;
 		background-color: #222226;
@@ -192,9 +193,19 @@ h5 {
 	margin: 15px 0 5px;
 }
 
+strong {
+	white-space: nowrap;
+}
+
 ul {
 	margin: 0;
 	padding: 0 0 0 20px;
+	list-style-type: none;
+}
+
+main ul li::before {
+	content: "> ";
+	font-weight: bold;
 }
 
 p {
@@ -250,6 +261,9 @@ section {
 	max-width: calc(100% - 40px);
 	width: 800px;
 	padding: 10px 20px;
+	> div {
+		width: 100%;
+	}
 }
 
 .flex-wrap {

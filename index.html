@@ -4,5 +4,9 @@ layout: home
 
 <!--Game Jams-->
 <section>
-	{% include game_jams.html %}
+	{% include event_list.html type=site.data.event-type.game-jam %}
+</section>
+
+<section>
+	{% include event_list.html type=site.data.event-type.coding-contest %}
 </section>

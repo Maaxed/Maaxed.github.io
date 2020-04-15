@@ -27,19 +27,26 @@ plugins:
   - jekyll-feed
 
 collections:
-  jams:
+  game_jams:
     output: true
-  jam_previews:
+  coding_contests:
+    output: true
+  event_previews:
     output: false
 
 defaults:
   - scope:
       path: ""
-      type: "jam_previews"
+      type: "event_previews"
     values:
       layout: preview
   - scope:
       path: ""
-      type: "jams"
+      type: "coding_contests"
+    values:
+      layout: event_post
+  - scope:
+      path: ""
+      type: "game_jams"
     values:
       layout: event_post

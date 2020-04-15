@@ -1,0 +1,20 @@
+<div class="banner dark banner-color">
+	<h1><a id="{{ include.type.id }}"></a>{{ include.type.title }}</h1>
+</div>
+<div class="flex-wrap">
+
+	{% assign events = site.data.events | sort_values "start" %}
+	{% for event in events %}
+		{% if event[1].type == include.type.id %}
+			{% capture target_id %}{{ event[1].event }}-{{ event[1].edition }}{% endcapture %}
+			{% for preview in site.event_previews %}
+				{% if preview.event_id == target_id %}
+					<section class="content-color">
+						{{ preview }}
+					</section>
+				{% endif %}
+			{% endfor %}
+		{% endif %}
+	{% endfor %}
+	
+</div>
