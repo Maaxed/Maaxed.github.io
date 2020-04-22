@@ -1,6 +1,8 @@
 ---
 ---
 
+$small_menu: only screen and (max-width: 420px);
+
 /* ALL CONTENT */
 body {
 	margin: 0;
@@ -36,52 +38,10 @@ header {
 	label {
 		display: none;
 	}
-}
 
-.menu {
-	font-size: 0;
-	ul {
-		padding: 0;
-	}
-	li {
-		list-style: none;
-		display: inline-block;
-		font-size: initial;
-	}
-	a {
-		color: inherit;
-		display: inline-block;
-		text-decoration: none;
-		padding: 10px 15px;
-		position: relative;
-		&:hover, &:focus {
-			color: inherit;
-			background-color: inherit;
-			&::after {
-				content: ">";
-				position: absolute;
-				right: 2px;
-			}
-			&::before {
-				content: "<";
-				position: absolute;
-				left: 2px;
-			}
-		}
-		&:hover {
-			background-color: #36363A;
-		}
-	}
-}
-
-#menu-button {
-	display: none;
-}
-
-/* Custom menu for small screens */
-@media only screen and (max-width: 420px) {
-	
-	header {
+	/* Custom menu for small screens */
+	@media #{$small_menu} {
+		
 		text-align: left;
 		&.menu {
 			li {
@@ -126,6 +86,46 @@ header {
 	}
 }
 
+.menu {
+	font-size: 0;
+	ul {
+		padding: 0;
+	}
+	li {
+		list-style: none;
+		display: inline-block;
+		font-size: initial;
+	}
+	a {
+		color: inherit;
+		display: inline-block;
+		text-decoration: none;
+		padding: 10px 15px;
+		position: relative;
+		&:hover, &:focus {
+			color: inherit;
+			background-color: inherit;
+			&::after {
+				content: ">";
+				position: absolute;
+				right: 2px;
+			}
+			&::before {
+				content: "<";
+				position: absolute;
+				left: 2px;
+			}
+		}
+		&:hover {
+			background-color: #36363A;
+		}
+	}
+}
+
+#menu-button {
+	display: none;
+}
+
 /* MAIN CONTENT */
 main {
 	flex: 1 0 auto;
@@ -143,7 +143,6 @@ main {
 h1, h2, h3, h4 {
 	text-transform: capitalize;
 }
-
 h1 {
 	margin: 5px auto;
 	font-size: 2.5em;
@@ -193,6 +192,11 @@ h5 {
 	margin: 15px 0 5px;
 }
 
+span.last-name {
+	font-variant: small-caps;
+}
+
+
 strong {
 	white-space: nowrap;
 }
@@ -235,7 +239,7 @@ section {
 	align-items: center;
 	overflow: hidden;
 	&.auto-height {
-		min-height: 250px;
+		min-height: 350px;
 		max-height: 600px;
 		height: calc(100vh - (20px + 1rem)); /* menu height */
 	}
@@ -244,21 +248,14 @@ section {
 	}
 }
 
-.content {
-	max-width: 1000px;
-	width: calc(100% - 10px);
-	padding: 10px;
-	margin-left: auto;
-	margin-right: auto;
-}
-
 .banner {
 	width: 100%;
 }
 
 .container {
 	margin: 0 auto;
-	max-width: calc(100% - 40px);
+	max-width: 100%;
+	box-sizing: border-box;
 	width: 800px;
 	padding: 10px 20px;
 	> div {
@@ -279,7 +276,6 @@ section {
 		max-width: 500px;
 		background-color: rgba(255, 255, 255, 0.2);
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-		/*box-shadow: 6px 8px rgba(0, 0, 0, 0.2);*/
 	}
 	> .large-box {
 		flex: 3 0 0;
@@ -292,57 +288,6 @@ section {
 		object-fit: contain;
 		width: 500px;
 		max-width: 100%;
-	}
-}
-
-#portrait {
-	height: 250px;
-	width: 250px;
-	border-radius: 50%;
-	object-position: top;
-	background-color: none;
-	object-fit: cover;
-	margin: auto;
-	z-index: 0;
-
-	transition: all 1s;
-}
-
-#presentation-section {
-	background-color: #5900FF;
-	max-height: none;
-	position: relative;
-}
-
-#presentation-background {
-	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	img {
-		display: block;
-		width: auto;
-		max-width: none;
-		height: 2000px;
-		align-self: center;
-		transition: height 1s;
-	}
-}
-
-/* Smaller portrait for little screens */
-@media only screen and (max-width: 450px), only screen and (max-height: 350px) {
-	
-	#presentation-background img {
-		height: 1000px;
-	}
-
-	#portrait {
-		height: 150px;
-		width: 150px;
 	}
 }
 
