@@ -8,9 +8,9 @@ permalink: /legalnotice/
 
 Ce site a été créé à l'aide des logiciels suivants :
 
-- Jekyll : https://github.com/jekyll/jekyll
+- [Jekyll](https://github.com/jekyll/jekyll)
 
 
-Font utilisé : 
+Police d'écriture utilisée : 
 
-- JetBrains Mono https://www.jetbrains.com/lp/mono/
+- [JetBrains Mono](https://www.jetbrains.com/lp/mono/)

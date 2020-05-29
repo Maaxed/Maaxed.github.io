@@ -6,14 +6,6 @@ ludum-dare-44:
   end: "2019-04-30 03:00 +0200"
   post: _game_jams/ludum_dare_44.html
 
-enseirb-mmi-2:
-  type: game-jam
-  event: enseirb-mmi
-  edition: 2
-  start: "2020-01-17 19:00 +0100"
-  end: "2020-01-19 16:00 +0100"
-  post: _game_jams/enseirb_mmi_jam.html
-
 ludum-dare-45:
   type: game-jam
   event: ludum-dare
@@ -21,6 +13,22 @@ ludum-dare-45:
   start: "2019-10-05 00:00 +0200"
   end: "2019-10-08 00:00 +0200"
   post: _game_jams/ludum_dare_45.html
+
+ludum-dare-46:
+  type: game-jam
+  event: ludum-dare
+  edition: 46
+  start: "2020-04-18 03:00 +0200"
+  end: "2020-04-20 03:00 +0200"
+  post: _game_jams/ludum_dare_46.html
+
+enseirb-mmi-2:
+  type: game-jam
+  event: enseirb-mmi
+  edition: 2
+  start: "2020-01-17 19:00 +0100"
+  end: "2020-01-19 16:00 +0100"
+  post: _game_jams/enseirb_mmi_jam.html
 
 
 codingup-all:
