@@ -31,6 +31,7 @@ header {
 	right: 0;
 	z-index: 1;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+	min-height: 42px;
 	div {
 		z-index: initial;
 		background-color: #222226;
@@ -90,21 +91,12 @@ header {
 	font-size: 0;
 	ul {
 		padding: 0;
-	}
-	li {
-		list-style: none;
-		display: inline-block;
-		font-size: initial;
-	}
-	a {
-		color: inherit;
-		display: inline-block;
-		text-decoration: none;
-		padding: 10px 15px;
-		position: relative;
-		&:hover, &:focus {
-			color: inherit;
-			background-color: inherit;
+		li {
+			list-style: none;
+			display: inline-block;
+			font-size: initial;
+		}
+		a:hover, a:focus {
 			&::after {
 				content: ">";
 				position: absolute;
@@ -116,6 +108,17 @@ header {
 				left: 2px;
 			}
 		}
+	}
+	a {
+		color: inherit;
+		display: inline-block;
+		text-decoration: none;
+		padding: 10px 15px;
+		position: relative;
+		&:hover, &:focus {
+			color: inherit;
+			background-color: inherit;
+		}
 		&:hover {
 			background-color: #36363A;
 		}
@@ -124,6 +127,25 @@ header {
 
 #menu-button {
 	display: none;
+}
+
+#contacts {
+	position: absolute;
+	font-size: initial;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	a {
+		padding: 0;
+		margin: 5px;
+		border-radius: 2px;
+		width: 32px;
+		height: 32px;
+		float: left;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
 }
 
 /* MAIN CONTENT */

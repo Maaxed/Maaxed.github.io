@@ -15,4 +15,4 @@ Vous pouvez retrouver mes réalisations sur les sites suivants :
 
 Vous pouvez me contacter sur les réseaux sociaux suivants :
 
-- [LinkedIn](https://www.linkedin.com/in/lucas-gu%C3%A9don-55b33314a/)
+- [LinkedIn®](https://www.linkedin.com/in/lucas-gu%C3%A9don-55b33314a/)
