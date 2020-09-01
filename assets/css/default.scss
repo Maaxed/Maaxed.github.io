@@ -31,7 +31,11 @@ header {
 	right: 0;
 	z-index: 1;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-	min-height: 42px;
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	padding: 0px 10px;
+
 	div {
 		z-index: initial;
 		background-color: #222226;
@@ -89,6 +93,7 @@ header {
 
 .menu {
 	font-size: 0;
+	flex-grow: 1;
 	ul {
 		padding: 0;
 		li {
@@ -130,11 +135,6 @@ header {
 }
 
 #contacts {
-	position: absolute;
-	font-size: initial;
-	right: 0;
-	top: 0;
-	bottom: 0;
 	a {
 		padding: 0;
 		margin: 5px;
@@ -145,7 +145,22 @@ header {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		color: inherit;
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: inherit;
+			background-color: inherit;
+		}
+		&:hover {
+			background-color: #36363A;
+		}
 	}
+}
+
+#title-name {
+	margin: auto 5px;
+	font-size: 1.5em;
 }
 
 /* MAIN CONTENT */

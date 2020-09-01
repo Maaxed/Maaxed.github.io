@@ -58,8 +58,8 @@ $portrait_layout: "(max-width: 800px)";
 	height: auto;
 	width: $size;
 	top: 0;
-	right: calc(50%-$size);
-	left: calc(50%-$size);
+	/*right: calc(50%-$size);
+	left: calc(50%-$size);*/
 	bottom: 0;
 	border-radius: 50%;
 	object-position: top;
