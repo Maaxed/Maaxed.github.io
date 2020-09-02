@@ -1,7 +1,7 @@
 ---
 ---
 
-$small_menu: only screen and (max-width: 420px);
+$small_menu: only screen and (max-width: 800px);
 
 /* ALL CONTENT */
 body {
@@ -29,15 +29,15 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-	z-index: 1;
+	z-index: 2;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 	display: flex;
 	flex-direction: row;
 	align-items: stretch;
-	padding: 0px 10px;
+	justify-content: space-between;
+	padding: 0 10px;
 
 	div {
-		z-index: initial;
 		background-color: #222226;
 	}
 	label {
@@ -46,11 +46,16 @@ header {
 
 	/* Custom menu for small screens */
 	@media #{$small_menu} {
-		
-		text-align: left;
-		&.menu {
-			li {
-				display: block;
+		padding: 0;
+		.menu {
+			order: -1;
+			text-align: left;
+			ul {
+				height: auto;
+				li {
+					display: block;
+					height: auto;
+				}
 			}
 			a {
 				display: block;
@@ -62,6 +67,16 @@ header {
 			padding: 10px;
 			font-size: initial;
 			cursor: pointer;
+			height: 100%;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: row;
+			align-content: center;
+			position: relative;
+			z-index: 2;
+			span {
+				margin: auto;
+			}
 		}
 		#menu-text:hover, #menu-button:checked ~ #menu-text:hover {
 			background-color: #26262A;
@@ -77,13 +92,14 @@ header {
 			top: 0;
 			bottom: 0;
 			background-color: rgba(0, 0, 0, 0.5);
-			z-index: -1;
+			z-index: 1;
 		}
 		ul {
 			background-color: #000010;
 			position: absolute;
 			top: 100%;
 			left: 0;
+			z-index: 2;
 		}
 		#menu-button:not(:checked) ~ ul {
 			display: none;
@@ -93,15 +109,16 @@ header {
 
 .menu {
 	font-size: 0;
-	flex-grow: 1;
 	ul {
 		padding: 0;
+		height: 100%;
 		li {
 			list-style: none;
 			display: inline-block;
 			font-size: initial;
+			height: 100%;
 		}
-		a:hover, a:focus {
+		a:hover span, a:focus span {
 			&::after {
 				content: ">";
 				position: absolute;
@@ -115,17 +132,25 @@ header {
 		}
 	}
 	a {
+		height: 100%;
+		box-sizing: border-box;
 		color: inherit;
 		display: inline-block;
 		text-decoration: none;
 		padding: 10px 15px;
 		position: relative;
+		display: flex;
+		flex-direction: row;
+		align-content: center;
 		&:hover, &:focus {
 			color: inherit;
 			background-color: inherit;
 		}
 		&:hover {
 			background-color: #36363A;
+		}
+		span {
+			margin: auto;
 		}
 	}
 }
