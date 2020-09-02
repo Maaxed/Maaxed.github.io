@@ -1,7 +1,7 @@
 <div class="banner dark banner-color">
 	<h1><a id="{{ include.type.id }}"></a>{{ include.type.title }}</h1>
 </div>
-<div class="flex-wrap">
+<div class="flex-wrap event-list">
 
 	{% assign events = site.data.events | sort_values: "start" | reversed %}
 	{% for event in events %}
