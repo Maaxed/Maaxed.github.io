@@ -5,3 +5,7 @@ game-jam:
 coding-contest:
   title: Coding Contest
   id: coding-contest
+
+other:
+  title: Autres Projets
+  id: other

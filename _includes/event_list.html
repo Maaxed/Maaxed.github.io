@@ -6,7 +6,7 @@
 	{% assign events = site.data.events | sort_values: "start" | reversed %}
 	{% for event in events %}
 		{% if event[1].type == include.type.id %}
-			{% capture target_id %}{{ event[1].event }}-{{ event[1].edition }}{% endcapture %}
+			{% capture target_id %}{{ event[0] }}{% endcapture %}
 			{% for preview in site.event_previews %}
 				{% if preview.event_id == target_id %}
 					<section class="content-color">
