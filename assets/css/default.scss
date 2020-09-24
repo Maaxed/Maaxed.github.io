@@ -143,7 +143,6 @@ header {
 		flex-direction: row;
 		align-content: center;
 		&:hover, &:focus {
-			color: inherit;
 			background-color: inherit;
 		}
 		&:hover {
@@ -176,9 +175,9 @@ header {
 		&:hover, &:focus {
 			color: inherit;
 			background-color: inherit;
-		}
-		&:hover {
-			background-color: #36363A;
+			img {
+				filter: drop-shadow( 0px 0px 2px white );
+			}
 		}
 	}
 }
@@ -186,6 +185,19 @@ header {
 #title-name {
 	margin: auto 5px;
 	font-size: 1.5em;
+	a {
+		color: inherit;
+		text-decoration: none;
+		&:hover, &:focus {
+			background-color: inherit;
+		}
+		&:hover {
+			background-color: #36363A;
+		}
+		span {
+			margin: auto;
+		}
+	}
 }
 
 /* MAIN CONTENT */
