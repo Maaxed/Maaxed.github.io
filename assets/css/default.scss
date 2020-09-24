@@ -62,7 +62,7 @@ header {
 				text-align: center;
 			}
 		}
-		#menu-text {
+		#menu-button {
 			display: inline-block;
 			padding: 10px;
 			font-size: initial;
@@ -78,21 +78,11 @@ header {
 				margin: auto;
 			}
 		}
-		#menu-text:hover, #menu-button:checked ~ #menu-text:hover {
+		#menu-button:hover {
 			background-color: #26262A;
 		}
-		#menu-button:checked ~ #menu-text {
+		#menu-button:focus {
 			background-color: #08080A;
-		}
-		#menu-button:checked ~ #menu-darkener {
-			position: fixed;
-			display: block;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			background-color: rgba(0, 0, 0, 0.5);
-			z-index: 1;
 		}
 		ul {
 			background-color: #000010;
@@ -100,9 +90,10 @@ header {
 			top: 100%;
 			left: 0;
 			z-index: 2;
-		}
-		#menu-button:not(:checked) ~ ul {
 			display: none;
+		}
+		.menu:focus-within ul {
+			display: block;
 		}
 	}
 }
