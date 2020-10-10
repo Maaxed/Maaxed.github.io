@@ -1,8 +1,6 @@
 ---
 ---
 
-$small_menu: only screen and (max-width: 800px);
-
 /* ALL CONTENT */
 body {
 	margin: 0;
@@ -45,7 +43,7 @@ header {
 	}
 
 	/* Custom menu for small screens */
-	@media #{$small_menu} {
+	@media only screen and (max-width: 800px) {
 		padding: 0;
 		.menu {
 			order: -1;

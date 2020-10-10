@@ -1,26 +1,10 @@
-ludum-dare-44:
-  type: game-jam
-  event: ludum-dare
-  edition: 44
-  start: "2019-04-27 03:00 +0200"
-  end: "2019-04-30 03:00 +0200"
-  post: _game_jams/ludum_dare_44.html
-
-ludum-dare-45:
-  type: game-jam
-  event: ludum-dare
-  edition: 45
-  start: "2019-10-05 00:00 +0200"
-  end: "2019-10-08 00:00 +0200"
-  post: _game_jams/ludum_dare_45.html
-
 ludum-dare-46:
   type: game-jam
   event: ludum-dare
   edition: 46
   start: "2020-04-18 03:00 +0200"
   end: "2020-04-20 03:00 +0200"
-  post: _game_jams/ludum_dare_46.html
+  post: /game_jams/ludum_dare_46.html
 
 enseirb-mmi-2:
   type: game-jam
@@ -28,7 +12,23 @@ enseirb-mmi-2:
   edition: 2
   start: "2020-01-17 19:00 +0100"
   end: "2020-01-19 16:00 +0100"
-  post: _game_jams/enseirb_mmi_jam.html
+  post: /game_jams/enseirb_mmi_jam.html
+
+ludum-dare-45:
+  type: game-jam
+  event: ludum-dare
+  edition: 45
+  start: "2019-10-05 00:00 +0200"
+  end: "2019-10-08 00:00 +0200"
+  post: /game_jams/ludum_dare_45.html
+
+ludum-dare-44:
+  type: game-jam
+  event: ludum-dare
+  edition: 44
+  start: "2019-04-27 03:00 +0200"
+  end: "2019-04-30 03:00 +0200"
+  post: /game_jams/ludum_dare_44.html
 
 
 codingup:
@@ -36,7 +36,7 @@ codingup:
   event: codingup
   start: "2017-03-18 10:30 +0100"
   end: "2019-03-24 16:30 +0100"
-  post: _coding_contests/codingup.html
+  post: /coding_contests/codingup.html
 
 
 fractal:

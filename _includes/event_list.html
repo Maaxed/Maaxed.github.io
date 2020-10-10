@@ -3,7 +3,7 @@
 </div>
 <div class="flex-wrap event-list">
 
-	{% assign events = site.data.events | sort_values: "start" | reversed %}
+	{% assign events = site.data.events %}
 	{% for event in events %}
 		{% if event[1].type == include.type.id %}
 			{% capture target_id %}{{ event[0] }}{% endcapture %}
