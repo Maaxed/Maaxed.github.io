@@ -1,6 +1,8 @@
 ---
 ---
 
+$menu-height: calc(20px + 1rem);
+
 /* ALL CONTENT */
 body {
 	margin: 0;
@@ -288,6 +290,11 @@ a {
 	}
 }
 
+a.anchor {
+	position: absolute;
+	top: calc(0px - #{$menu-height});
+}
+
 img {
 	max-width: 100%;
 }
@@ -304,7 +311,7 @@ section {
 	&.auto-height {
 		min-height: 350px;
 		max-height: 600px;
-		height: calc(100vh - (20px + 1rem)); /* menu height */
+		height: calc(100vh - #{$menu-height});
 	}
 	> img {
 		max-width: calc(100% + 20px);
