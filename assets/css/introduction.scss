@@ -58,8 +58,6 @@ $portrait_layout: "(max-width: 800px)";
 	height: auto;
 	width: $size;
 	top: 0;
-	/*right: calc(50%-$size);
-	left: calc(50%-$size);*/
 	bottom: 0;
 	border-radius: 50%;
 	object-position: top;
@@ -89,13 +87,17 @@ $portrait_layout: "(max-width: 800px)";
 }
 
 @media #{$portrait_layout} {
+	$portrait_size_factor: 0.666;
+	$portrait_background_size: 1300px;
+	
 	#intro-section {
-		height: 150vw;
+		height: calc(#{$portrait_size_factor} * #{$portrait_background_size});
 	}
+
 	#intro-background {
-		width: 235%;
-		height: 150%;
-		left: -67.5%;
+		width: #{$portrait_background_size};
+		height: #{$portrait_background_size};
+		left: calc(50% - #{$portrait_background_size} / 2);
 		img {
 			transform: rotate(90deg);
 		}
@@ -103,10 +105,8 @@ $portrait_layout: "(max-width: 800px)";
 	}
 
 	#intro-content {
-		//max-width: 82%;
 		max-width: 600px;
 		margin-top: 20px;
-		//margin-left: auto;
 		margin-left: 20px;
 		margin-right: 20px;
 		transition: none;
@@ -126,11 +126,11 @@ $portrait_layout: "(max-width: 800px)";
 	}
 
 	#portrait {
-		top: 93vw;
+		top: calc(#{$portrait_background_size} * 0.425);
 		right: 0;
 		left: 0;
 		bottom: 0;
 		margin: 0 auto auto;
-		width: 40%;
+		width: calc(#{$portrait_background_size} * 0.15);
 	}
 }
