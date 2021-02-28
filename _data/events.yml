@@ -1,3 +1,11 @@
+enseirb-mmi-3:
+  type: game-jam
+  event: enseirb-mmi
+  edition: 3
+  start: "2021-01-29 18:00 +0100"
+  end: "2021-01-31 18:00 +0100"
+  post: /game_jams/enseirb_mmi_jam_3
+
 ludum-dare-46:
   type: game-jam
   event: ludum-dare
@@ -12,7 +20,7 @@ enseirb-mmi-2:
   edition: 2
   start: "2020-01-17 19:00 +0100"
   end: "2020-01-19 16:00 +0100"
-  post: /game_jams/enseirb_mmi_jam
+  post: /game_jams/enseirb_mmi_jam_2
 
 ludum-dare-45:
   type: game-jam
