@@ -8,7 +8,7 @@ permalink: /contact/
 
 Vous pouvez retrouver mes réalisations sur les sites suivants :
 
-- [GitHub](https://github.com/LeBossMax2)
+- [GitHub](https://github.com/Maaxed)
 - [itch.io](https://lebossmax2.itch.io/)
 
 #### Réseaux sociaux
