@@ -1,3 +1,27 @@
+ludum-dare-56:
+  type: game-jam
+  event: ludum-dare
+  edition: 56
+  start: "2024-10-05 00:00 +0200"
+  end: "2024-10-08 00:00 +0200"
+  post: https://manaut.itch.io/a-nice-picnic-with-ants
+
+ludum-dare-55:
+  type: game-jam
+  event: ludum-dare
+  edition: 55
+  start: "2024-04-13 00:00 +0200"
+  end: "2024-04-16 00:00 +0200"
+  post: https://lebossmax2.itch.io/demoncorp
+
+ludum-dare-54:
+  type: game-jam
+  event: ludum-dare
+  edition: 54
+  start: "2023-09-30 00:00 +0200"
+  end: "2023-10-03 00:00 +0200"
+  post: https://lebossmax2.itch.io/not-so-spacious-spaceship
+
 enseirb-mmi-3:
   type: game-jam
   event: enseirb-mmi
@@ -50,6 +74,7 @@ codingup:
 fractal:
   type: other
   start: "2019-12-15"
+  post: /Fractal
 
 illusion:
   type: other

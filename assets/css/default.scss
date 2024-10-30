@@ -343,14 +343,14 @@ section {
 		margin: 10px;
 		padding: 10px;
 		flex: 1 0 0;
-		min-width: 250px;
+		min-width: min(265px, 98vw);
 		max-width: 500px;
 		background-color: rgba(255, 255, 255, 0.2);
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 	}
 	> .large-box {
 		flex: 3 0 0;
-		min-width: 250px;
+		min-width: min(265px, 98vw);
 		max-width: 800px;
 	}
 	> img, > img.large-box {
