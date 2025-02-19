@@ -9,7 +9,7 @@ permalink: /contact/
 Vous pouvez retrouver mes réalisations sur les sites suivants :
 
 - [GitHub](https://github.com/Maaxed)
-- [itch.io](https://lebossmax2.itch.io/)
+- [itch.io](https://maaxed.itch.io/)
 
 #### Réseaux sociaux
 
