@@ -49,6 +49,9 @@ $portrait_layout: "(max-width: 800px)";
 	h2 {
 		text-transform: none;
 	}
+	strong {
+		white-space: normal;
+	}
 	transition: max-width 1s;
 }
 
