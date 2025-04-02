@@ -1,5 +1,5 @@
 <div class="banner dark banner-color">
-	<h1><a id="{{ include.type.id }}" class="anchor"></a>{{ include.type.title }}</h1>
+	<h1 id="{{ include.type.id }}">{{ include.type.title }}</h1>
 </div>
 <div class="flex-wrap event-list">
 
@@ -9,9 +9,7 @@
 			{% capture target_id %}{{ event[0] }}{% endcapture %}
 			{% for preview in site.event_previews %}
 				{% if preview.event_id == target_id %}
-					<section class="content-color">
-						{{ preview }}
-					</section>
+					{{ preview }}
 				{% endif %}
 			{% endfor %}
 		{% endif %}

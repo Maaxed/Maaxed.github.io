@@ -1,7 +1,7 @@
 ---
 ---
 
-$menu-height: calc(20px + 1rem);
+$menu-height: max(calc(20px + 1rem), 42px);
 
 /* ALL CONTENT */
 body {
@@ -15,6 +15,7 @@ html {
 	height: 100%;
 	font-family: Arial, sans-serif;
 	scroll-behavior: smooth;
+	scroll-padding-top: #{$menu-height}
 }
 
 header, footer {
@@ -209,18 +210,22 @@ h1, h2, h3, h4 {
 	text-transform: capitalize;
 }
 h1 {
-	margin: 5px auto;
+	margin: 0;
+	padding: 5px;
 	font-size: 2.5em;
 	text-align: center;
-	position: relative;
 	&.huge {
-		margin: 30px 0;
+		padding: 30px 0;
 		font-size: 4em;
 	}
+}
+h1, h2 {
 	a {
 		text-decoration: none;
 		color: inherit;
-		&:hover, &:focus {
+
+		&:hover,
+		&:focus {
 			background-color: transparent;
 			text-decoration: underline;
 		}
@@ -286,13 +291,8 @@ a {
 	color: darkblue;
 	&:hover, &:focus {
 		color: inherit;
-		background-color: rgba(0, 0, 141, 0.6);
+		background-color: rgba(152, 176, 241, 0.5);
 	}
-}
-
-a.anchor {
-	position: absolute;
-	top: calc(0px - #{$menu-height});
 }
 
 img {
@@ -301,6 +301,9 @@ img {
 
 .dark a {
 	color: lightskyblue;
+	&:hover, &:focus {
+		background-color: rgba(0, 0, 141, 0.6);
+	}
 }
 
 section {
@@ -312,9 +315,6 @@ section {
 		min-height: 350px;
 		max-height: 600px;
 		height: calc(100vh - #{$menu-height});
-	}
-	> img {
-		max-width: calc(100% + 20px);
 	}
 }
 
@@ -341,11 +341,9 @@ section {
 	align-items: stretch;
 	> * {
 		margin: 10px;
-		padding: 10px;
 		flex: 1 0 0;
 		min-width: min(265px, 98vw);
 		max-width: 500px;
-		background-color: rgba(255, 255, 255, 0.2);
 		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
 	}
 	> .large-box {
@@ -364,8 +362,47 @@ section {
 
 .event-list {
 	max-width:1500px;
+
+	img {
+		width: calc(100% + 20px);
+		max-width: none;
+		aspect-ratio: 16 / 9;
+		object-fit: contain;
+		background-color: #000000;
+	}
+
+	h2 {
+		margin: 5px auto;
+		font-size: 2.0em;
+		text-align: center;
+		position: relative;
+	}
+
+	section {
+		padding: 10px;
+	}
+
+	> a {
+		display: flex;
+		text-decoration: none;
+		color: inherit;
+		width: 335px;
+		flex: 1 1 auto;
+
+		&:hover, &:focus {
+			box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 1.0);
+
+			h2 {
+				text-decoration: underline;
+			}
+		}
+	}
 }
 
+
+.pixel-art {
+	image-rendering: pixelated;
+}
 
 
 .dark {
