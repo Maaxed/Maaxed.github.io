@@ -364,6 +364,9 @@ section {
 	max-width:1500px;
 
 	img {
+		order: -1;
+		margin-top: -10px;
+		margin-bottom: 10px;
 		width: calc(100% + 20px);
 		max-width: none;
 		aspect-ratio: 16 / 9;
@@ -372,22 +375,34 @@ section {
 	}
 
 	h2 {
-		margin: 5px auto;
-		font-size: 2.0em;
+		margin: 0 auto 0;
+		font-size: 1.8em;
 		text-align: center;
 		position: relative;
 	}
 
+	h3 {
+		margin: 10px auto 0;
+	}
+
+	h4 {
+		margin: 20px auto 0;
+	}
+
 	section {
 		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	> * {
+		color: inherit;
+		width: 335px;
+		flex: 1 1 auto;
 	}
 
 	> a {
 		display: flex;
 		text-decoration: none;
-		color: inherit;
-		width: 335px;
-		flex: 1 1 auto;
 
 		&:hover, &:focus {
 			box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 1.0);
