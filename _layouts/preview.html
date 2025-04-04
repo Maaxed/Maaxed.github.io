@@ -3,7 +3,30 @@
 {% if event.post %}<a id="{{ page.event_id }}" href="{{ event.post }}">{% endif %}
 <section class="content-color">
 	<h2>{{ page.title }}</h2>
-	<h3>{{ event.start | date: "%B %Y" }}</h3>
+	<div class="properties">
+		{% if event.end %}
+			{% assign start_sec = event.start | date: "%s" %}
+			{% assign end_sec = event.end | date: "%s" %}
+			{% assign delta_sec = end_sec | minus: start_sec  %}
+			{% assign delta_hours = delta_sec | divided_by: 60 | divided_by: 60 %}
+			<div title="Durée">
+				<img src="/assets/icons/feather/clock.svg" alt="Durée" width="24" height="24"/>
+				<span>{{ delta_hours }}h</span>
+			</div>
+		{% endif %}
+		<div title="Taille de l'équipe">
+			{% if event.team-members > 1 %}
+				<img src="/assets/icons/feather/users.svg" alt="Taille de l'équipe" width="24" height="24"/>
+			{% else %}
+				<img src="/assets/icons/feather/user.svg" alt="Solo" width="24" height="24"/>
+			{% endif %}
+			<span>{{ event.team-members }}</span>
+		</div>
+		<div title="Date">
+			<img src="/assets/icons/feather/calendar.svg" alt="Date" width="24" height="24"/>
+			<span>{{ event.start | date: "%B %Y" }}</span>
+		</div>
+	</div>
 	{{ content }}
 </section>
 {% if event.post %}</a>{% endif %}

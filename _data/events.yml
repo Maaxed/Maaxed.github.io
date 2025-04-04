@@ -5,6 +5,7 @@ ludum-dare-56:
   start: "2024-10-05 00:00 +0200"
   end: "2024-10-08 00:00 +0200"
   post: https://manaut.itch.io/a-nice-picnic-with-ants
+  team-members: 5
 
 ludum-dare-55:
   type: game-jam
@@ -13,6 +14,7 @@ ludum-dare-55:
   start: "2024-04-13 00:00 +0200"
   end: "2024-04-16 00:00 +0200"
   post: https://maaxed.itch.io/demoncorp
+  team-members: 4
 
 ludum-dare-54:
   type: game-jam
@@ -21,6 +23,7 @@ ludum-dare-54:
   start: "2023-09-30 00:00 +0200"
   end: "2023-10-03 00:00 +0200"
   post: https://maaxed.itch.io/not-so-spacious-spaceship
+  team-members: 3
 
 enseirb-mmi-3:
   type: game-jam
@@ -29,6 +32,7 @@ enseirb-mmi-3:
   start: "2021-01-29 18:00 +0100"
   end: "2021-01-31 18:00 +0100"
   post: /game_jams/enseirb_mmi_jam_3
+  team-members: 4
 
 ludum-dare-46:
   type: game-jam
@@ -37,6 +41,7 @@ ludum-dare-46:
   start: "2020-04-18 03:00 +0200"
   end: "2020-04-20 03:00 +0200"
   post: /game_jams/ludum_dare_46
+  team-members: 1
 
 enseirb-mmi-2:
   type: game-jam
@@ -45,6 +50,7 @@ enseirb-mmi-2:
   start: "2020-01-17 19:00 +0100"
   end: "2020-01-19 16:00 +0100"
   post: /game_jams/enseirb_mmi_jam_2
+  team-members: 5
 
 ludum-dare-45:
   type: game-jam
@@ -53,6 +59,7 @@ ludum-dare-45:
   start: "2019-10-05 00:00 +0200"
   end: "2019-10-08 00:00 +0200"
   post: /game_jams/ludum_dare_45
+  team-members: 6
 
 ludum-dare-44:
   type: game-jam
@@ -61,6 +68,7 @@ ludum-dare-44:
   start: "2019-04-27 03:00 +0200"
   end: "2019-04-30 03:00 +0200"
   post: /game_jams/ludum_dare_44
+  team-members: 8
 
 
 codingup:
@@ -75,7 +83,9 @@ fractal:
   type: other
   start: "2019-12-15"
   post: /Fractal
+  team-members: 1
 
 illusion:
   type: other
   start: "2020-07-01"
+  team-members: 1

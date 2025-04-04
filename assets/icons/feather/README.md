@@ -1,0 +1,1 @@
+Icons from [feathericons.com](https://feathericons.com) under MIT license
