@@ -4,13 +4,7 @@ layout: base_page
 
 {% assign event = site.data.events[page.event_id] %}
 
-<h3>
-	{% if page.display_date %}
-		{{ page.display_date }}
-	{% else %}
-		{{ event.start | date: "%B %Y" }}
-	{% endif %}
-</h3>
+{% include event_properties.html event_id=page.event_id %}
 
 <div>
 	{{ content }}
