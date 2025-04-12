@@ -354,7 +354,7 @@ section {
 	&.auto-height {
 		min-height: 350px;
 		max-height: 600px;
-		height: calc(100vh - #{$menu-height});
+		height: calc(100vh - #{$menu-height} - 30px); // remove 30px so that it is easier to understand that you can scroll
 	}
 }
 
@@ -427,7 +427,8 @@ section {
 }
 
 .event-list {
-	max-width:1500px;
+	width: 100%;
+	max-width:1400px;
 
 	h2 {
 		margin: 0 auto 15px;
@@ -466,9 +467,9 @@ section {
 
 	> * {
 		color: inherit;
-		width: 320px;
-		max-width: 100vw;
-		flex: 1 1 auto;
+		width: 350px;
+		max-width: min(100vw, 450px);
+		flex: 1 0 auto;
 	}
 
 	> a {
@@ -477,6 +478,10 @@ section {
 		justify-content: space-between;
 		text-decoration: none;
 		align-items: center;
+
+		> section {
+			width: 100%;
+		}
 
 		> span {
 			text-decoration: underline;

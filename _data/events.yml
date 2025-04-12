@@ -1,3 +1,12 @@
+global-game-jam-2025:
+  type: game-jam
+  event: global-game-jam
+  edition: 2025
+  start: "2025-01-24 19:30 +0100"
+  end: "2025-01-26 20:30 +0100"
+  post: https://maaxed.itch.io/bubble-odyssey
+  team-members: 3
+
 ludum-dare-56:
   type: game-jam
   event: ludum-dare
