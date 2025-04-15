@@ -501,6 +501,10 @@ section {
 				color: inherit;
 				background-color: rgba(152, 176, 241, 0.5);
 			}
+
+			> section > img {
+				content: var(--src-gif)
+			}
 		}
 	}
 }
