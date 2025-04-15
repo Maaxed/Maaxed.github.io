@@ -289,7 +289,7 @@ h3 {
 }
 
 h4 {
-	margin: 15px 0;
+	margin: 30px 0 15px;
 	font-size: 1.3em;
 	width: 100%;
 	&::before {
@@ -354,7 +354,7 @@ section {
 	&.auto-height {
 		min-height: 350px;
 		max-height: 600px;
-		height: calc(100vh - #{$menu-height} - 30px); // remove 30px so that it is easier to understand that you can scroll
+		height: calc(100vh - #{$menu-height} - 100px); // remove 30px so that it is easier to understand that you can scroll
 	}
 }
 
