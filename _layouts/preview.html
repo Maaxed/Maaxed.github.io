@@ -10,11 +10,15 @@
 		</section>
 {% if event.post %}
 		<span>
-			{% assign has_more_info = event.post | slice: 0 %}
-			{% if has_more_info == "/" %}
-				Plus d'info »
+			{% if page.link_text %}
+				{{ page.link_text }} »
 			{% else %}
-				Jouer »
+				{% assign has_more_info = event.post | slice: 0 %}
+				{% if has_more_info == "/" %}
+					Plus d'info »
+				{% else %}
+					Jouer »
+				{% endif %}
 			{% endif %}
 		</span>
 	</a>

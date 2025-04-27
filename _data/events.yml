@@ -90,9 +90,16 @@ codingup:
 
 fractal:
   type: other
-  start: "2019-12-15"
+  start: "2023-06-25"
   post: /Fractal
   team-members: 1
+
+minesweeper:
+  type: other
+  start: "2021-12-03"
+  post: https://github.com/Maaxed/Minesweeper
+  team-members: 1
+
 
 illusion:
   type: other
