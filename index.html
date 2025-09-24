@@ -26,6 +26,10 @@ extra_css: introduction.css
 	<img src="/assets/portrait.png" id="portrait" alt="Portrait">
 </section>
 
+<section>
+	{% include event_list.html type=site.data.event-type.work-experience %}
+</section>
+
 <!--Game Jams-->
 <section>
 	{% include event_list.html type=site.data.event-type.game-jam %}

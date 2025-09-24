@@ -1,26 +1,58 @@
 {% assign event = site.data.events[include.event_id] %}
-
+{% if event.end %}
+	{% assign start_sec = event.start | date: "%s" %}
+	{% assign end_sec = event.end | date: "%s" %}
+	{% assign delta_sec = end_sec | minus: start_sec  %}
+	{% assign delta_hours = delta_sec | divided_by: 60 | divided_by: 60 %}
+	{% if delta_hours <= 700 %}
+		{%assign show_duration = true %}
+	{% endif %}
+{% endif %}
 <div class="properties">
-	{% if event.end %}
-		{% assign start_sec = event.start | date: "%s" %}
-		{% assign end_sec = event.end | date: "%s" %}
-		{% assign delta_sec = end_sec | minus: start_sec  %}
-		{% assign delta_hours = delta_sec | divided_by: 60 | divided_by: 60 %}
+	{% if delta_hours and show_duration %}
 		<div title="Durée">
 			<img src="/assets/icons/feather/clock.svg" alt="Durée" width="24" height="24"/>
 			<span>{{ delta_hours }}h</span>
 		</div>
 	{% endif %}
-	<div title="Taille de l'équipe">
-		{% if event.team-members > 1 %}
-			<img src="/assets/icons/feather/users.svg" alt="Taille de l'équipe" width="24" height="24"/>
-		{% else %}
-			<img src="/assets/icons/feather/user.svg" alt="Solo" width="24" height="24"/>
-		{% endif %}
-		<span>{{ event.team-members }}</span>
-	</div>
+	{% if event.team-members %}
+		<div title="Taille de l'équipe">
+			{% if event.team-members > 1 %}
+				<img src="/assets/icons/feather/users.svg" alt="Taille de l'équipe" width="24" height="24"/>
+			{% else %}
+				<img src="/assets/icons/feather/user.svg" alt="Solo" width="24" height="24"/>
+			{% endif %}
+			<span>{{ event.team-members }}</span>
+		</div>
+	{% endif %}
 	<div title="Date">
 		<img src="/assets/icons/feather/calendar.svg" alt="Date" width="24" height="24"/>
-		<span>{{ event.start | date: "%B %Y" }}</span>
+		<span>
+			{{ event.start | date: "%B %Y" }}
+			{% if event.end and show_duration != true %}
+				-
+				{% if event.end == "today" %}
+					Today
+				{% else %}
+					{{ event.end | date: "%B %Y" }}
+				{% endif %}
+			{% endif %}
+		</span>
 	</div>
+	{% if event.language or event.engine %}
+	<div title="Technologie">
+		<img src="/assets/icons/feather/layers.svg" alt="Technologie" width="24" height="24"/>
+		<span>
+			{% if event.engine %}
+				{{ event.engine }}
+			{% endif %}
+			{% if event.language %}
+				{% if event.engine %}
+				-
+				{% endif %}
+				{{ event.language }}
+			{% endif %}
+		</span>
+	</div>
+	{% endif %}
 </div>

@@ -1,3 +1,25 @@
+asobo-studio-msfs2024:
+  type: work-experience
+  start: "2022-08-01"
+  end: today
+  post: https://www.flightsimulator.com
+  language: "C++"
+
+asobo-studio-msfs2020:
+  type: work-experience
+  start: "2022-02-01"
+  end: "2022-07-31"
+  post: https://www.flightsimulator.com
+  language: "C++"
+
+seven-shapes:
+  type: work-experience
+  start: 2021-06-01
+  end: 2021-09-30
+  post: https://www.7-shapes.com/
+  language: "C#"
+  engine: "Unity"
+
 global-game-jam-2025:
   type: game-jam
   event: global-game-jam
