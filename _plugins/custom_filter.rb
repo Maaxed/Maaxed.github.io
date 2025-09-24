@@ -1,33 +1,13 @@
 
-module HashFilter
-  def sort_values(input, property = nil)
-    if property.nil?
-      return input.sort { |a, b| nil_safe_compare(a[1], b[1]) }
-    else
-      begin
-        return input.sort { |a, b| nil_safe_compare(a[1][property], b[1][property]) }
-      rescue TypeError
-        raise_property_error(property)
-      end
-    end
-  end
+module DateFilter
+  MONTHS = %w(Janvier Février Mars Avril Mai Juin Juillet Août Septembre Octobre Novembre Décembre)
 
-  def reversed(input)
-    input.reverse
-  end
+  def month_fr(input)
 
-  private
+    return input unless (date = Liquid::Utils.to_date(input))
 
-  def nil_safe_compare(a, b)
-    if !a.nil? && !b.nil?
-      a <=> b
-    else
-      a.nil? ? 1 : -1
-    end
-  end
-  def raise_property_error(property)
-    raise Liquid::ArgumentError, "cannot select the property '#{property}'"
+    MONTHS[date.strftime("%m").to_i - 1]
   end
 end
 
-Liquid::Template.register_filter(HashFilter)
+Liquid::Template.register_filter(DateFilter)

@@ -28,13 +28,13 @@
 	<div title="Date">
 		<img src="/assets/icons/feather/calendar.svg" alt="Date" width="24" height="24"/>
 		<span>
-			{{ event.start | date: "%B %Y" }}
+			{{ event.start | month_fr }} {{ event.start | date: "%Y" }}
 			{% if event.end and show_duration != true %}
 				-
 				{% if event.end == "today" %}
-					Today
+					Aujourd'hui
 				{% else %}
-					{{ event.end | date: "%B %Y" }}
+					{{ event.end | month_fr }} {{ event.end | date: "%Y" }}
 				{% endif %}
 			{% endif %}
 		</span>

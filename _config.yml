@@ -22,10 +22,6 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Maaxed
 permalink: none
 
-# Build settings
-plugins:
-  - jekyll-feed
-
 collections:
   game_jams:
     output: true

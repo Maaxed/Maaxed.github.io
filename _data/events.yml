@@ -14,8 +14,8 @@ asobo-studio-msfs2020:
 
 seven-shapes:
   type: work-experience
-  start: 2021-06-01
-  end: 2021-09-30
+  start: "2021-06-01"
+  end: "2021-09-30"
   post: https://www.7-shapes.com/
   language: "C#"
   engine: "Unity"
