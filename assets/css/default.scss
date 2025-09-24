@@ -447,6 +447,7 @@ section {
 
 	p {
 		margin: 15px 0 0;
+		width: 100%;
 	}
 
 	section {
@@ -462,6 +463,10 @@ section {
 			aspect-ratio: 16 / 9;
 			object-fit: contain;
 			background-color: #000000;
+
+			&.img-cover {
+				object-fit: cover;
+			}
 		}
 	}
 
