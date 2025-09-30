@@ -1,139 +1,94 @@
 ---
 ---
 
-$small_screen: "only screen and (max-width: 1200px)";
-$portrait_layout: "(max-width: 800px)";
-
-
 #intro-section {
 	background: url("/assets/code.png");
 
-	max-height: none;
+	background-color: transparent;
 	position: relative;
-}
-
-#intro-background {
-	position: absolute;
 	display: flex;
+	margin: 0;
+	padding: 20px;
+	flex-direction: row;
+	flex-wrap: wrap-reverse;
 	align-items: center;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: #707070;
-	img {
-		display: block;
-		width: 100%;
-		max-width: none;
-		align-self: center;
-		transition: height 1s;
+	justify-content: center;
+	align-content: center;
+	column-gap: 60px;
+	row-gap: 30px;
+
+	// Add a blur to the background
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		z-index: 0;
+
+		backdrop-filter: blur(2px) brightness(60%) grayscale(20%);
 	}
-	mix-blend-mode: hard-light;
-	transition: width 1s;
+
+	> * {
+		z-index: 1; // Put the content in front of the blur
+	}
 }
 
 #intro-content {
-	position: relative;
-	background-color: black;
-	margin-top: auto;
-	margin-bottom: auto;
-	margin-right: auto;
-	margin-left: 20px;
-	max-width: 32%;
-	h1 {
-		font-size: 4.5em;
-		text-align: left;
-		margin-left: 0;
-		margin-bottom: 30px;
-	}
+	background-color: white;
+	margin: 0;
+	padding: 20px 15px;
+	max-width: 650px;
+	border: 1px solid black;
+
+	box-shadow: 0 4px 15px black, 0 6px 30px 0 black;
+
 	h2 {
 		text-transform: none;
+		margin: 0 0 20px 0;
 	}
+	
 	strong {
 		white-space: normal;
 	}
-	transition: max-width 1s;
+
+	p {
+		margin: 0;
+	}
 }
 
 #portrait {
-	$size: 18%;
-	position: absolute;
+	--size: 350px;
+	width: var(--size);
 	height: auto;
-	width: $size;
-	top: 0;
-	bottom: 0;
+	max-width: 100%;
+	aspect-ratio: 1;
 	border-radius: 50%;
 	object-position: top;
 	object-fit: cover;
-	margin-top: auto;
-	margin-bottom: auto;
-	z-index: 0;
-
-	transition: margin-left 1s, width 1s;
+	border: 1px solid black;
+	box-shadow: 0 4px 15px black, 0 6px 30px 0 black;
+	margin: 0;
+	padding: 0;
 }
 
 
 /* Smaller portrait for little screens */
-@media #{$small_screen} {
-	#intro-background {
-		width: 150%;
-	}
-
-	#intro-content {
-		max-width: 50%;
-	}
+@media only screen and (max-width: 1000px) {
 
 	#portrait {
-		margin-left: 50%;
-		width: 27%;
+		--size: 250px;
 	}
 }
 
-@media #{$portrait_layout} {
-	$portrait_size_factor: 0.666;
-	$portrait_background_size: 1300px;
-	
-	#intro-section {
-		height: calc(#{$portrait_size_factor} * #{$portrait_background_size});
-	}
+@media (max-width: 400px) {
 
-	#intro-background {
-		width: #{$portrait_background_size};
-		height: #{$portrait_background_size};
-		left: calc(50% - #{$portrait_background_size} / 2);
-		img {
-			transform: rotate(90deg);
-		}
-		transition: none;
+	#intro-section {
+		padding: 10px;
 	}
 
 	#intro-content {
-		max-width: 600px;
-		margin-top: 20px;
-		margin-left: 20px;
-		margin-right: 20px;
-		transition: none;
-		min-height: 40%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: flex-start;
-		h1 {
-			font-size: 3em;
-			margin-bottom: 20px;
-		}
-		h2 {
-			font-size: 1.2em;
-			margin: 12px 0;
-		}
-	}
-
-	#portrait {
-		top: calc(#{$portrait_background_size} * 0.425);
-		right: 0;
-		left: 0;
-		bottom: 0;
-		margin: 0 auto auto;
-		width: calc(#{$portrait_background_size} * 0.15);
+		padding: 10px;
 	}
 }

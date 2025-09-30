@@ -352,9 +352,7 @@ section {
 	align-items: center;
 	overflow: hidden;
 	&.auto-height {
-		min-height: 350px;
-		max-height: 600px;
-		height: calc(100vh - #{$menu-height} - 100px); // remove 30px so that it is easier to understand that you can scroll
+		min-height: min(800px, calc(100vh - #{$menu-height} - 150px)); // remove 30px so that it is easier to understand that you can scroll
 	}
 }
 
