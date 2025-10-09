@@ -16,7 +16,7 @@
 	align-items: center;
 	justify-content: center;
 	align-content: center;
-	column-gap: 60px;
+	column-gap: 100px;
 	row-gap: 45px;
 
 	// Add a blur to the background
@@ -78,7 +78,11 @@
 
 
 /* Smaller portrait for little screens */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1300px) {
+
+	#intro-section {
+		flex-direction: column-reverse;
+	}
 
 	#portrait {
 		--size: 250px;
@@ -93,5 +97,9 @@
 
 	#intro-content {
 		padding: 10px;
+	}
+
+	#portrait {
+		--size: 200px;
 	}
 }
