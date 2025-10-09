@@ -9,6 +9,8 @@ body {
 	min-height: 100%;
 	display: flex;
 	flex-direction: column;
+	--shadow-color: rgb(93, 80, 170);
+	--shadow-color-alpha: rgba(93, 80, 170, 0.6);
 }
 
 html {
@@ -463,65 +465,100 @@ section {
 		width: 100%;
 	}
 
-	section {
-		padding: 10px;
-		box-sizing: border-box;
-
-		> img {
-			order: -1;
-			margin-top: -10px;
-			margin-bottom: 10px;
-			width: calc(100% + 20px);
-			max-width: none;
-			aspect-ratio: 16 / 9;
-			object-fit: contain;
-			background-color: #000000;
-
-			&.img-cover {
-				object-fit: cover;
-			}
-		}
-	}
-
 	> * {
+		--offset-x: -8px;
+		--offset-y: -12px;
+
 		color: inherit;
 		width: 350px;
 		max-width: min(100vw, 450px);
 		flex: 1 0 auto;
-	}
 
-	> a {
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: stretch;
 		text-decoration: none;
-		align-items: center;
+		align-items: stretch;
 
-		> section {
+		position: relative;
+		margin: 15px calc(10px - var(--offset-x)) calc(10px - var(--offset-y)) 10px;
+		background-color: transparent;
+		box-shadow: none;
+
+		&::before {
+			content: "";
+			position: absolute;
 			width: 100%;
+			height: 100%;
+			right: var(--offset-x);
+			bottom: var(--offset-y);
+			background-color: var(--shadow-color);
 		}
 
-		> span {
+		> section {
+			z-index: 1;
+			transition: all 0.15s;
+			padding: 0 10px;
+			box-sizing: border-box;
+			width: 100%;
+			height: 100%;
+			background-color: white;
+			box-shadow: 0 4px 8px var(--shadow-color-alpha), 0 6px 20px var(--shadow-color-alpha);
+
+			> img {
+				order: -1;
+				margin-bottom: 10px;
+				width: calc(100% + 20px);
+				max-width: none;
+				aspect-ratio: 16 / 9;
+				object-fit: contain;
+				background-color: #000000;
+
+				&.img-cover {
+					object-fit: cover;
+				}
+			}
+
+			> p:last-of-type {
+				flex-grow: 1;
+				margin-bottom: 10px;
+			}
+		}
+
+		span.post-link {
 			text-decoration: underline;
 			margin: 10px;
 			color: darkblue;
 		}
 
-		&:hover, &:focus {
-			box-shadow: 0px 0px 30px 0 rgba(255, 255, 255, 1.0);
-			background-color: white;
+		&:any-link:hover, &:any-link:focus {
+			background-color: transparent;
+			
+			> section {
+				translate: var(--offset-x) var(--offset-y);
+
+				> img {
+					content: var(--src-gif)
+				}
+			}
 
 			h2 {
 				text-decoration: underline;
 			}
 
-			> span {
+			span.post-link {
 				color: inherit;
 				background-color: rgba(152, 176, 241, 0.5);
 			}
+		}
 
-			> section > img {
-				content: var(--src-gif)
+		@media (max-width: 370px) {
+			width: 100%;
+			--offset-x: 0px;
+
+			> section {
+				border-left: none;
+				border-right: none;
 			}
 		}
 	}

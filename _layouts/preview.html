@@ -1,25 +1,27 @@
 {% assign event = site.data.events[page.event_id] %}
 
 {% if event.post %}
-	<a id="{{ page.event_id }}" href="{{ event.post }}" class="content-color">
+<a id="{{ page.event_id }}" href="{{ event.post }}">
+{% else %}
+<a id="{{ page.event_id }}">
 {% endif %}
-		<section class="content-color">
-			<h2>{{ page.title }}</h2>
-			{% include event_properties.html event_id=page.event_id %}
-			{{ content }}
-		</section>
-{% if event.post %}
-		<span>
-			{% if page.link_text %}
-				{{ page.link_text }} »
-			{% else %}
-				{% assign has_more_info = event.post | slice: 0 %}
-				{% if has_more_info == "/" %}
-					Plus d'info »
+	<section class="content-color">
+		<h2>{{ page.title }}</h2>
+		{% include event_properties.html event_id=page.event_id %}
+		{{ content }}
+		{% if event.post %}
+			<span class="post-link">
+				{% if page.link_text %}
+					{{ page.link_text }} »
 				{% else %}
-					Jouer »
+					{% assign has_more_info = event.post | slice: 0 %}
+					{% if has_more_info == "/" %}
+						Plus d'info »
+					{% else %}
+						Jouer »
+					{% endif %}
 				{% endif %}
-			{% endif %}
-		</span>
-	</a>
-{% endif %}
+			</span>
+		{% endif %}
+	</section>
+</a>

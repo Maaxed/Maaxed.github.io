@@ -2,6 +2,8 @@
 ---
 
 #intro-section {
+	--shadow-color-alpha: rgba(93, 80, 170, 0.8);
+
 	background: url("/assets/code.png");
 
 	background-color: transparent;
@@ -15,7 +17,7 @@
 	justify-content: center;
 	align-content: center;
 	column-gap: 60px;
-	row-gap: 30px;
+	row-gap: 45px;
 
 	// Add a blur to the background
 	&::before {
@@ -27,7 +29,7 @@
 		bottom: 0;
 		z-index: 0;
 
-		backdrop-filter: blur(2px) brightness(60%) grayscale(20%);
+		backdrop-filter: blur(2px) brightness(80%) grayscale(20%);
 	}
 
 	> * {
@@ -40,9 +42,9 @@
 	margin: 0;
 	padding: 20px 15px;
 	max-width: 650px;
-	border: 1px solid black;
+	position: relative;
 
-	box-shadow: 0 4px 15px black, 0 6px 30px 0 black;
+	box-shadow: 8px 12px 0 var(--shadow-color), 0 4px 8px var(--shadow-color-alpha), 0 6px 20px var(--shadow-color-alpha);
 
 	h2 {
 		text-transform: none;
@@ -55,6 +57,7 @@
 
 	p {
 		margin: 0;
+		font-size: 1.1rem;
 	}
 }
 
@@ -67,10 +70,10 @@
 	border-radius: 50%;
 	object-position: top;
 	object-fit: cover;
-	border: 1px solid black;
-	box-shadow: 0 4px 15px black, 0 6px 30px 0 black;
 	margin: 0;
 	padding: 0;
+
+	box-shadow: 2px 6px 0 6px var(--shadow-color), 0 4px 8px var(--shadow-color-alpha), 0 6px 20px var(--shadow-color-alpha);
 }
 
 
@@ -82,10 +85,10 @@
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 370px) {
 
 	#intro-section {
-		padding: 10px;
+		padding: 20px 0;
 	}
 
 	#intro-content {
