@@ -11,6 +11,9 @@ body {
 	flex-direction: column;
 	--shadow-color: rgb(93, 80, 170);
 	--shadow-color-alpha: rgba(93, 80, 170, 0.6);
+
+	--link-color: rgb(103, 65, 192);
+	--link-color-hover: rgb(28, 9, 110);
 }
 
 html {
@@ -75,7 +78,7 @@ header {
 				display: none;
 				flex-direction: column;
 				align-items: stretch;
-				background-color: #000010;
+				background-color: #08080A;
 				li {
 					display: block;
 					height: auto;
@@ -154,9 +157,10 @@ header {
 	a {
 		height: 100%;
 		box-sizing: border-box;
-		color: inherit;
+		color: inherit !important;
 		display: inline-block;
-		text-decoration: none;
+		text-decoration: none !important;
+		font-weight: normal;
 		padding: 10px 15px;
 		position: relative;
 		display: flex;
@@ -330,10 +334,15 @@ p {
 }
 
 a {
-	color: darkblue;
+	color: var(--link-color);
+	text-decoration: none;
+	font-weight: bold;
+
+
 	&:hover, &:focus {
-		color: inherit;
-		background-color: rgba(152, 176, 241, 0.5);
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		color: var(--link-color-hover);
 	}
 }
 
@@ -469,7 +478,10 @@ section {
 		--offset-x: -8px;
 		--offset-y: -12px;
 
-		color: inherit;
+		background-color: transparent !important;
+		text-decoration: none !important;
+		color: inherit !important;
+
 		width: 350px;
 		max-width: min(100vw, 450px);
 		flex: 1 0 auto;
@@ -482,7 +494,6 @@ section {
 
 		position: relative;
 		margin: 15px calc(10px - var(--offset-x)) calc(10px - var(--offset-y)) 10px;
-		background-color: transparent;
 		box-shadow: none;
 
 		&::before {
@@ -526,14 +537,13 @@ section {
 		}
 
 		span.post-link {
-			text-decoration: underline;
+			color: var(--link-color);
+			text-decoration: none;
+			font-weight: bold;
 			margin: 10px;
-			color: darkblue;
 		}
 
 		&:any-link:hover, &:any-link:focus {
-			background-color: transparent;
-			
 			> section {
 				translate: var(--offset-x) var(--offset-y);
 
@@ -547,8 +557,9 @@ section {
 			}
 
 			span.post-link {
-				color: inherit;
-				background-color: rgba(152, 176, 241, 0.5);
+				text-decoration: underline;
+				text-decoration-thickness: 1px;
+				color: var(--link-color-hover);
 			}
 		}
 
